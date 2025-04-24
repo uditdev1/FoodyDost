@@ -12,20 +12,23 @@
 
 .tags{
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    top: 0.5rem;
-    overflow: scroll;
+    width : "100%";
+    overflow : scroll;
+    border : "10px solid black";
+    margin : "20rem";
 }
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
     .tags {
-        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        width : "100vw";
+        overflow : scroll;
+        border : "10px solid black";
+        margin : "20rem";
     }
-}
+} */
 
 .email_verification {
     display: flex;
@@ -34,4 +37,4 @@
     width: 100%;
     height: fit-content;
     padding-top : 1.5rem;
-}
+}t

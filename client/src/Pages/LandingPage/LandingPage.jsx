@@ -32,6 +32,9 @@ function LandingPage() {
 
     useEffect(() => {
       const locomotiveScroll = new LocomotiveScroll();
+      return () => {
+        locomotiveScroll.destroy();
+      }
     },[]);
 
     const mouseX = useMotionValue(0);
@@ -136,14 +139,14 @@ function LandingPage() {
               <div className="max-md:w-[90%] ">
                 <div className="text-4xl z-[99] md:text-7xl pb-4 font-black bg-gradient-to-b from-[#D32F2F] to-[#e3acac] text-transparent bg-clip-text tracking-tighter">
                     <span className='text-2xl hover:underline md:text-4xl'>Play on </span> 
-                    <a
+                    <Link
                       onMouseMove={handleMouseMotionInChessV_title}
                       onMouseLeave={handleMouseMotionInChessV_titleLeave}
-                      className=' hover:underline ChessV_title' 
-                      href='https://chesswe.netlify.app'
+                      className=' hover:underline ChessV_title overflow-hidden' 
+                      to='https://chesswe.netlify.app'
                     > 
-                        ChessWe
-                    </a>
+                      ChessWe
+                    </Link>
                     <span className='text-2xl md:text-4xl'> to Compete, <br />Order on </span>
                     <span onClick={( ) => navigate("/home")} className='cursor-pointer'> 
                     <span
@@ -156,7 +159,7 @@ function LandingPage() {
                     <span className='text-2xl md:text-4xl'> to Grab the Treat </span>
                 </div>
                 <div className="text-xl lg:text-2xl tracking-tighter opacity-85">
-                    Craving something delicious? FoodyDost lets you explore, order, and enjoy your favorite meals with ease!
+                    Craving something delicious? FoodyBro lets you explore, order, and enjoy your favorite meals with ease!
                 </div>
       
                 <div className="flex items-center justify-between gap-3 mt-6 text-lg">
@@ -203,7 +206,7 @@ function LandingPage() {
                   </div>
  
                   <div className="flex items-center w-full justify-center gap-4 mt-4 text-lg">
-                    <Link to={"https://uditdev.is-a.dev"}>
+                    <Link to={"https://udit.is-a.dev"}>
                       <div className="cursor-pointer hover:underline">
                         Learn more
                         {/* <FaArrowRight className="h-3 w-3 inline ml-2" /> */}

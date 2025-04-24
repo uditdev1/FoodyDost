@@ -254,7 +254,7 @@ export default function PrimarySearchAppBar() {
                   width: '25rem', 
                 },
                 '@media only screen and (max-width: 600px)': {
-                  width: '11rem', 
+                  width: '14rem', 
                   padding: "0px",
                   margin:"0px"
                 }

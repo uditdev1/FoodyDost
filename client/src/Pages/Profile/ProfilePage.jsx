@@ -45,7 +45,18 @@ export default function ProfilePage () {
                 <form className={classes.details} onSubmit={handleSubmit} >
                     <span className={classes.mapHead}>Update Profile</span>
                     <TextField
-                        sx={{ height: "5rem", width: "20.5rem" }}
+                        sx={{ height: "5rem", width: "100%" }}
+                        name='email'
+                        label="E-mail"
+                        type='text'
+                        variant="outlined"
+                        defaultValue={user.email}
+                        InputProps={{
+                            readOnly: true,
+                        }}
+                    />
+                    <TextField
+                        sx={{ height: "5rem", width: "100%" }}
                         name='name'
                         label="Name"
                         type='text'
@@ -83,12 +94,31 @@ export default function ProfilePage () {
                             Email Verified
                         </Alert>
                     }
+                    {
+                        !user.is_verified &&
+                        <div className={classes.hover_container}>
+                            <Alert 
+                                onClick={sendEmailVerification} 
+                                variant="outlined" 
+                                severity="error" 
+                                sx={{
+                                    marginBottom: "4%",
+                                    cursor: "pointer",
+                                    width: "100%",
+                                    color: "red",
+                                }}
+                            >
+                                click to verify your email
+                            </Alert>
+                        </div>
+    
+                    }
                     <Button 
                         type="submit" 
                         variant='contained' 
                         sx={{
                             bgcolor:"#04AF70", 
-                            width:"14rem", 
+                            width:"50%", 
                             height:"3rem", 
                             fontSize:"1.2rem",
                             marginLeft : "20%",
@@ -100,25 +130,6 @@ export default function ProfilePage () {
                     </Button>
                     
                 </form>
-                {
-                    !user.is_verified &&
-                    <div className={classes.hover_container}>
-                        <Alert 
-                            onClick={sendEmailVerification} 
-                            variant="outlined" 
-                            severity="error" 
-                            sx={{
-                                marginBottom: "4%",
-                                cursor: "pointer",
-                                width: "97%",
-                                color: "red",
-                            }}
-                        >
-                            click to verify your email
-                        </Alert>
-                    </div>
-
-                }
                 <ChangePassword/>
             </div>
         </>

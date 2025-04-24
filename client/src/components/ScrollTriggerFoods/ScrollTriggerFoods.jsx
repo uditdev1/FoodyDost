@@ -25,11 +25,6 @@ const ScrollTriggerFoods = ({stfm4}) => {
             setFoodData(data.slice(0,5))
         }
         fetchData();
-        const locomotiveScroll = new LocomotiveScroll({
-            el : scrollTriggerFoodsRef.current
-        });
-        window.scrollTo(0, 0);
-        ScrollTrigger.refresh();
     } , []);
     
     const navigate = useNavigate();

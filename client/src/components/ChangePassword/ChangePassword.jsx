@@ -63,7 +63,7 @@ export default function ChangePassword () {
             <form className={classes.details} onSubmit={handleSubmit}>
                 <span className={classes.mapHead}>Change Password</span>
                 <TextField
-                    sx={{ height: "5rem", width: "20.5rem" }}
+                    sx={{ height: "5rem", width: "100%" }}
                     name='currPass'
                     label="Current Password"
                     type='text'
@@ -71,7 +71,7 @@ export default function ChangePassword () {
                     onChange={handleChange}
                 />
                 <TextField
-                    sx={{ height: "5rem", width: "20.5rem" }}
+                    sx={{ height: "5rem", width: "`00%`" }}
                     name='newPass'                        
                     label="New Password"
                     type='text'
@@ -79,7 +79,7 @@ export default function ChangePassword () {
                     onChange={handleChange}
                 />
                 <TextField
-                    sx={{ height: "5rem", width: "20.5rem" }}
+                    sx={{ height: "5rem", width: "100%" }}
                     name='confirmPass'
                     label="Confirm New Password"
                     type='text'
@@ -87,7 +87,7 @@ export default function ChangePassword () {
                     onChange={handleChange}
                 />
                 {error && 
-                    <Alert variant="outlined" severity="error" sx={{marginBottom :"4%", width:"18.5rem" ,color:"red"}}>
+                    <Alert variant="outlined" severity="error" sx={{marginBottom :"4%", width:"100%" ,color:"red"}}>
                         {errorData}
                     </Alert>
                 }
@@ -97,7 +97,7 @@ export default function ChangePassword () {
                     sx={{
                     bgcolor:"#04AF70", 
 
-                    width:"14rem", 
+                    width:"fit-content", 
                     height:"3rem", 
                     fontSize:"1.2rem",
                     marginLeft : "20%",

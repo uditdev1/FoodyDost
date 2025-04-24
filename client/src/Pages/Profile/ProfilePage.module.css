@@ -33,7 +33,7 @@
 }
 
 .hover_container {
-    width: fit-content;
+    width: "1000";
     transition: transform 0.5s ease-in-out;
 }
   

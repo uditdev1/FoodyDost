@@ -91,9 +91,9 @@ export default function MediaCard({food}) {
             </Typography>
         </span>
         <br/>
-          {
-              food.origins.map( (origin) => <Chip key={origin} label={origin}/> )
-          }
+          <div className='flex gap-2 flex-wrap'>
+            {food.origins.map( (origin) => <Chip key={origin} label={origin}/> )}
+          </div>
           <br/>
           <Button variant="contained" sx={{bgcolor:"#D32F2F", marginTop:"1rem"}} onClick={handleAddToCart}><AddShoppingCartIcon /></Button>
       </CardContent>
