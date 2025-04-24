@@ -381,13 +381,16 @@ router.get("/tags/getAll", handler (async (req, res) => {
             }
         }
     ]).sort({count : -1 }); // -1 for descending and 1 is for ascending 
-    
-    if(userId){
-      const foodIds = await userModel.findById({_id : userId});
-      if(!foodIds.favourite_food) {
-        return res.send(ans);
+    try {
+      if(userId){
+        const foodIds = await userModel.findById({_id : userId});
+        if(!foodIds.favourite_food) {
+          return res.send(ans);
+        }
+        tags.unshift({name : "favourites" , count : foodIds.favourite_food.length });
       }
-      tags.unshift({name : "favourites" , count : foodIds.favourite_food.length });
+    } catch (err) {
+      console.log(err);
     }
 
     res.send(tags);

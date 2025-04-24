@@ -4,6 +4,7 @@
   "description": "**DEVELOPMENT PHASE**\r   * Home Page - Done\r   * Food Page - Done\r   * Login Page - Done\r   * Register Page - Done\r   * Backend - Done\r   * Database (MongoDB) - Done\r   * Cart Page - Done\r   * Checkout Page - Done\r   * Maps Integration - Done\r   * Dashboard (Admin or Not) - **Developing**\r   * Orders Page - **Developing**\r   * Payment (Razorpay ) - Done\r   * Profile Page - Done",
   "main": "index.js",
   "scripts": {
+    "start:both": "concurrently \"npm run start\" \"cd client && npm run dev\"",
     "start": "cd backend && npm start",
     "prebuild": "npm run install-backend && npm run install-client",
     "install-backend": "cd backend && npm install",
@@ -18,6 +19,7 @@
     "node": ">= 18"
   },
   "dependencies": {
+    "concurrently": "^9.1.2",
     "dotenv": "^16.4.5"
   }
 }
