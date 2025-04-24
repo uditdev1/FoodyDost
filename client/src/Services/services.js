@@ -20,9 +20,19 @@ export const getAllByTag = async (tag, userId) => {
 
 // favourite in food page not working ...
 
+// export const searchFood = async (searchTerm) => {
+//     const response = await axios.get("/api/foods/search/" + searchTerm);
+//     console.log(response);
+//     return response;
+// }
+
 export const searchFood = async (searchTerm) => {
-    const response = await axios.get("/api/foods/search/" + searchTerm);
-    return response;
+    try {
+        const response = await axios.post("/api/foods/ai_query" , {prompt : searchTerm , userId : "finding"});
+        return response;
+    } catch (err) {
+        console.log("searching error ... ", err);
+    }
 }
 
 export const saveSearchTerm = async (id , term) => {

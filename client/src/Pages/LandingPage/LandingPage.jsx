@@ -140,9 +140,9 @@ function LandingPage() {
                       onMouseMove={handleMouseMotionInChessV_title}
                       onMouseLeave={handleMouseMotionInChessV_titleLeave}
                       className=' hover:underline ChessV_title' 
-                      href=''
+                      href='https://chesswe.netlify.app'
                     > 
-                        ChessV 
+                        ChessWe
                     </a>
                     <span className='text-2xl md:text-4xl'> to Compete, <br />Order on </span>
                     <span onClick={( ) => navigate("/home")} className='cursor-pointer'> 

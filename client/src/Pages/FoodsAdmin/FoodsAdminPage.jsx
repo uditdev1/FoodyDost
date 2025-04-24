@@ -7,6 +7,7 @@ import Title from '../../components/Title/Title';
 import Search from '../../components/Search/Search';
 import Price from '../../components/Price/Price';
 import { toast } from 'react-toastify';
+import { getUser } from '../../Services/userService.js';
 
 export default function FoodsAdminPage() {
   const [foods, setFoods] = useState();
@@ -17,7 +18,7 @@ export default function FoodsAdminPage() {
   }, [searchTerm]);
 
   const loadFoods = async () => {
-    const foods = searchTerm ? await searchFood(searchTerm) : await getAll();
+    const foods = searchTerm ? await searchFood(searchTerm) : await getAll(getUser().id ?? "");
     setFoods(foods.data);
   };
 

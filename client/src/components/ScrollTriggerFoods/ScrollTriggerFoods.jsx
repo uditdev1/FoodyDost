@@ -7,6 +7,7 @@ import useDimensions from '../Hooks/useDimensions';
 import useScrollUtils from "./useScrollUtils";
 import LandingVideoAnimation from '../LandingVideoAnimation.jsx/LandingVideoAnimation';
 import { getAll } from '../../Services/services';
+import { getUser } from '../../Services/userService.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +20,8 @@ const ScrollTriggerFoods = ({stfm4}) => {
     const scrollTriggerFoodsRef = useRef();
     useEffect(() => {
         const fetchData = async () => {
-            const {data} = await getAll(); 
+            const userId = getUser() ? getUser().id : null ;
+            const {data} = await getAll(userId); 
             setFoodData(data.slice(0,5))
         }
         fetchData();
@@ -118,7 +120,7 @@ const ScrollTriggerFoods = ({stfm4}) => {
                             <div 
                                 onMouseMove={(e) => ScrollUtils.handleMouseEnter1(e, 0)} 
                                 onMouseLeave={(e) => ScrollUtils.handleMouseLeave1(e , 0)} 
-                                onClick={() => navigate("/food/" + foodData && foodData[0].id)} 
+                                onClick={() => navigate("/food/" + (foodData && foodData[0].id))} 
                                 className="cursor-none bg-cover img_par0 duration-100 z-[9] rounded-xl relative bg-red-300 w-[22rem] h-[25rem] flex justify-center items-center"
                                 >
                                 <img className='moving_img0 shadow-xl rounded-xl shadow-gray-600 object-cover w-[16rem] h-[20rem]' src={foodData && foodData[0].imageUrl} alt="" />
@@ -126,7 +128,7 @@ const ScrollTriggerFoods = ({stfm4}) => {
                             <div 
                                 onMouseMove={(e) => ScrollUtils.handleMouseEnter1(e,1)} 
                                 onMouseLeave={(e) => ScrollUtils.handleMouseLeave1(e,1)} 
-                                onClick={() => navigate("/food/" + foodData && foodData[1].id)} 
+                                onClick={() => navigate("/food/" + (foodData && foodData[1].id))} 
                                 className=" img_par1 z-[99] rounded-2xl w-[22rem] h-[25rem] flex justify-center items-center top-[150%] absolute stfm2a backdrop-blur-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                             >
                                 <img className='moving_img1 shadow-xl rounded-xl shadow-gray-600 object-cover w-[16rem] h-[20rem]' src={foodData && foodData[1].imageUrl} alt="" />
@@ -134,7 +136,7 @@ const ScrollTriggerFoods = ({stfm4}) => {
                             <div 
                                 onMouseMove={(e) => ScrollUtils.handleMouseEnter1(e,2)} 
                                 onMouseLeave={(e) => ScrollUtils.handleMouseLeave1(e,2)} 
-                                onClick={() => navigate("/food/" + foodData && foodData[2].id)} 
+                                onClick={() => navigate("/food/" + (foodData && foodData[2].id))} 
                                 className=" img_par2 z-[999] rounded-2xl w-[22rem] h-[25rem] flex justify-center items-center top-[150%] absolute stfm2b bg-green-200 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                             >
                                 <img className='moving_img2 shadow-xl rounded-xl shadow-gray-600 object-cover w-[16rem] h-[20rem]' src={foodData && foodData[2].imageUrl} alt="" />
@@ -142,7 +144,7 @@ const ScrollTriggerFoods = ({stfm4}) => {
                             <div 
                                 onMouseMove={(e) => ScrollUtils.handleMouseEnter1(e,3)} 
                                 onMouseLeave={(e) => ScrollUtils.handleMouseLeave1(e,3)} 
-                                onClick={() => navigate("/food/" + foodData && foodData[3].id)} 
+                                onClick={() => navigate("/food/" + (foodData && foodData[3].id))} 
                                 className=" img_par3 z-[9999] rounded-xl w-[22rem] h-[25rem] flex justify-center items-center top-[150%] absolute stfm2c bg-blue-200 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                             >
                                 <img className='moving_img3 shadow-xl rounded-xl shadow-gray-600 object-cover w-[16rem] h-[20rem]' src={foodData && foodData[3].imageUrl} alt="" />
@@ -150,7 +152,7 @@ const ScrollTriggerFoods = ({stfm4}) => {
                             <div 
                                 onMouseMove={(e) => ScrollUtils.handleMouseEnter1(e,4)} 
                                 onMouseLeave={(e) => ScrollUtils.handleMouseLeave1(e,4)} 
-                                onClick={() => navigate("/food/" + foodData && foodData[4].id)} 
+                                onClick={() => navigate("/food/" + (foodData && foodData[4].id))} 
                                 className="img_par4 z-[99999] rounded-xl w-[22rem] h-[25rem] flex justify-center items-center top-[150%] absolute stfm2d bg-gray-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                             >
                                 <img className='moving_img4 shadow-xl rounded-xl shadow-gray-600 object-cover w-[16rem] h-[20rem]' src={foodData && foodData[4].imageUrl} alt="" />
