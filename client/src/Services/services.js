@@ -1,7 +1,31 @@
 import axios from "axios";
 
+let food_details_fetch_count = 0;
+
 export const getAll = async (id) => {
-    const response =  await axios.get(`/api/foods` + (id ? "?id=" + id : ""));
+    let response;
+    try {
+        if(localStorage.getItem("food_details")) {
+            food_details_fetch_count++;
+            console.log("fetched from local...", food_details_fetch_count);
+            response = (JSON.parse(localStorage.getItem("food_details"))).food_details;
+        }
+        if(food_details_fetch_count > 3 || !response) {
+            response = await axios.get(`/api/foods` + (id ? "?id=" + id : "") );
+            localStorage.setItem(
+                "food_details",
+                JSON.stringify(
+                    {
+                        food_details : response
+                    }
+                )
+            );
+            food_details_fetch_count = 0
+            console.log("localstorage full... ", food_details_fetch_count);
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
     return response;
 }
 

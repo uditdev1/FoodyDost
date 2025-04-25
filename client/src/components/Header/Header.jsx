@@ -37,7 +37,7 @@ const Search = styled('div')(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
-    width: 'auto',
+    width: '100%',
   },
 }));
 
@@ -61,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
+      width: '100%',
     },
   },
 }));
@@ -249,12 +249,12 @@ export default function PrimarySearchAppBar() {
               onKeyUp={e => e.key === 'Enter' && search()}
               value={term}
               sx={{
-                width:"35rem",
+                width:"100%",
                 '@media only screen and (max-width: 800px)': {
-                  width: '25rem', 
+                  width: '100%', 
                 },
                 '@media only screen and (max-width: 600px)': {
-                  width: '14rem', 
+                  width: '100%', 
                   padding: "0px",
                   margin:"0px"
                 }
