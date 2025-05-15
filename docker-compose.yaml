@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: foodydost-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - foodydost-mongo-data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: foodydost-backend
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules  # Prevent node_modules from syncing
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/foodydost
+      - NODE_ENV=development
+    env_file:
+      - ./backend/.env
+
+volumes:
+  foodydost-mongo-data:

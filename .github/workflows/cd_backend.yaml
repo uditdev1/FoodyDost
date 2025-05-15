@@ -1,0 +1,29 @@
+name: Deploy the foodydost backend
+on:
+  push:
+    branch: [ main ]
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Docker login
+        uses: docker/login-action@v2
+        with: 
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: true
+          tags: |
+            rajputshashank/foodydost-backend:latest
+            rajputshashank/foodydost-backend:${{ github.sha }}
+
+      - name: Trigger redeploy on Render
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}

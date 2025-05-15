@@ -1,0 +1,100 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;    
+}
+
+.main {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height : 100vh;
+}
+
+.details span {
+    color : black;
+    font-weight: 400;
+    font-size: x-large;
+}
+
+.details span span{
+    color : grey;
+    font-weight: 600;
+    font-size:3rem;
+}
+
+table {
+    margin-top:2%;
+    font-size: x-large;
+    
+}
+
+td{
+    width: 10rem;
+    height: 1.5rem;
+}
+.createdAt {
+    width: 25rem;
+}
+
+.map {
+    margin: 3%;
+    margin-top: 0px;
+}
+
+.map .title{
+    color : grey;
+    font-weight: 600;
+    font-size:3rem;
+}
+
+.payment {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+  
+  .payment a {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 0.8rem 5rem;
+    border-radius: 1rem;
+  }
+  
+
+@media only screen and (max-width: 600px) {
+    .main {
+        margin-top:4%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .details span {
+        color : black;
+        font-weight: 400;
+        font-size: x-large;
+    }
+    
+    .details span span{
+        color : grey;
+        font-weight: 600;
+        font-size: xx-large;
+    }
+    table {
+        margin-top:2%;
+        font-size: large;
+    }
+
+    .map {
+        margin-top:3%;
+    }
+
+    .map .title{
+        color : grey;
+        font-weight: 600;
+        font-size:xx-large;
+    }
+    
+}

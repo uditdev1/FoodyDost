@@ -1,0 +1,16 @@
+.alertTitle {
+    font-weight: bolder;
+    font-size: 200rem;
+}
+.linkTag {
+    text-decoration: none;
+    position: relative;
+    top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+.linkTag:hover {
+    opacity: 1;
+}

@@ -1,0 +1,40 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap : 2rem
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+    width : "100%";
+    overflow : scroll;
+    border : "10px solid black";
+    margin : "20rem";
+}
+
+/* @media only screen and (min-width: 600px) {
+    .tags {
+        display: flex;
+        flex-direction: row;
+        width : "100vw";
+        overflow : scroll;
+        border : "10px solid black";
+        margin : "20rem";
+    }
+} */
+
+.email_verification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding-top : 1.5rem;
+}

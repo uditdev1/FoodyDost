@@ -1,0 +1,111 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height : 100vh;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    top:1rem;
+    grid: 50 50;
+    padding-bottom: 2rem;
+}
+
+.name_Favourite{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.img {
+    height: 26rem;
+    width: 30rem;
+    border-radius: 0.5rem;    
+    object-fit : cover
+}
+p{
+    font-size: 1.5rem;
+}
+
+.span {
+    padding-left: 2rem;
+}
+.priceName {
+    color: grey;
+    font-size: 1.5rem;
+    font-weight:lighter;
+}
+.price {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .img {
+        height: 20rem;
+        width: 21rem;
+    }
+}
+
+.title {
+    padding: 2%;
+    font-size: x-large;
+}
+.comment {
+    padding: 2%;
+    font-size: larger;
+}
+.reviewBox{
+    height: 13rem;
+    width: 18rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    margin : 1%;
+    position : relative;
+    overflow: scroll;
+}
+
+.ratingBox{
+    padding: 2%;
+}
+
+.textArea {
+    padding: 2%;
+}
+.commentText {
+    padding: 2%;
+    position: relative;
+    left: 5%;
+    font-size: medium;
+    width: 90%;
+    height: 40%;
+    overflow: scroll;
+}
+.uploadButton {
+    padding : 2%;
+}
+.deleteButton {
+    padding : 2%;
+    position:absolute;
+    bottom: 2%;
+    left: 2%;
+}
+.allReviews {
+    width: 90%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}

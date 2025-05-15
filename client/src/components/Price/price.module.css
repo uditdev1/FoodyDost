@@ -1,0 +1,9 @@
+.price {
+    font-size: x-large !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .price {
+        font-size: large !important;
+    }
+}
