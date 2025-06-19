@@ -34,7 +34,7 @@ A comprehensive food ordering application built using the MERN stack. The app al
 
 ## Screenshots
 
-![Home Page](Landing.png)
+![Home Page](LandingPage.png)
 ![Cart Page](image-1.png)
 ![Checkout Page](image-2.png)
 ![Admin Dashboard](image-3.png)
