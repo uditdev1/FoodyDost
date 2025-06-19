@@ -13,7 +13,7 @@ import { dirname } from "path";
 import path from "path";
 
 dbConnect();
-const data = import.meta.env.CLOUDINARY_API_SECRET;
+
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
